@@ -1,0 +1,15 @@
+<div mat-dialog-content>
+  <div class="d-flex flex-column">
+    <video [ngStyle]="{'display':isShown?'block':'none'}" #remoteVideo autoplay></video>
+  </div>
+  <div *ngIf="isCalling" >
+    <div class="spinner-border spinner-border-sm"></div>
+    <span>Calling</span>
+  </div>
+  <div class="text-center" *ngIf="errorMessage">{{errorMessage}}</div>
+  <div *ngIf="incomingCall" class="text-center">
+    <div>{{data.offer.senderName}} is calling you.</div>
+    <button class="btn btn-primary me-1" (click)="acceptCall()">Answer</button>
+    <button class="btn btn-secondary" (click)="closeCall()">Decline</button>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<hr>
+<li class="mb-4">
+  <h3> Event details:</h3>
+  {{event.details}}
+</li>
+<div class="mb-3">
+  <app-comment-create [event]="event" (webSocketMessage)="emitEvent($event)"></app-comment-create>
+</div>
+<li *ngFor="let comment of getParentComments()"
+    [ngClass]="thisUsersComment(comment.creatorId)?'comment user-comment':'comment'">
+  <div>
+    <span
+      [ngClass]="thisUsersComment(comment.creatorId)?'comment-creator-current-username':'comment-creator-username'">{{comment.creator}}</span>
+    <br>
+    <span class="ps-4">{{comment.commentBody}}</span>
+  </div>
+</li>
