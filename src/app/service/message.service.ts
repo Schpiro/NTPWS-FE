@@ -43,11 +43,5 @@ export class MessageService extends BackendBaseService{
       );
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(operation);
-      console.error(error);
-      return of(result as T);
-    }
-  }
+
 }

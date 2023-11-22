@@ -1,13 +1,23 @@
+import { Observable, of } from "rxjs";
+
 export class BackendBaseService {
 
   private ipAddress: string = 'localhost';
-  private port: string = '8081'
-  private baseURL: string = `https://${this.ipAddress}:${this.port}`;
+  private backendPort: string = '8081';
+  private baseURL: string = `https://${this.ipAddress}:${this.backendPort}`;
   eventsUrl = `${this.baseURL}/event`;
   messagesUrl = `${this.baseURL}/message`;
-  websocketURL = `wss://${this.ipAddress}:${this.port}/socket/test`;
-  userUrl = `${this.baseURL}/users`
+  websocketURL = `wss://${this.ipAddress}:${this.backendPort}/socket/test`;
+  userUrl = `${this.baseURL}/users`;
   rootUrl = `${this.baseURL}/authentication`;
-
+  
   constructor(){}
+
+  handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(operation);
+      console.error(error);
+      return of(result as T);
+    }
+  }
 }

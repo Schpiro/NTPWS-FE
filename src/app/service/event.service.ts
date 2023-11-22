@@ -51,12 +51,4 @@ export class EventService extends BackendBaseService{
         catchError(this.handleError<Comment>('createComment'))
       )
   }
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(operation);
-      console.error(error);
-      return of(result as T);
-    }
-  }
 }
