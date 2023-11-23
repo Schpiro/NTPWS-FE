@@ -4,8 +4,7 @@
       <div *ngIf="event.date>filterDate" class="event-box shadow-sm">
         <div class="event-item">
           <div (click)="selectedEvent!=event?selectedEvent=event:selectedEvent=undefined">
-            <h2>{{event.title}}</h2>
-            <button *ngIf="admin" (click)="deleteEvent(event)">delete</button>
+            <h2>{{event.title}} <button style="align-self: flex-end; background-color: red;" *ngIf="admin" (click)="deleteEvent(event)">delete</button></h2>
             <div>
               <span class="event-date-location"><i class="bi bi-geo-alt-fill"></i> {{event.location}}</span>
               <span class="event-date-location"><i
