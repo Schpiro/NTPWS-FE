@@ -33,6 +33,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { EventFilterComponent } from './component/event/event-filter/event-filter.component';
+import { RandomMemeComponent } from './component/random-meme/random-meme.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { EventFilterComponent } from './component/event/event-filter/event-filte
     UserGroupCreateDialog,
     CreateEventDialog,
     AudioVideoCallDialog,
-    EventFilterComponent
+    EventFilterComponent,
+    RandomMemeComponent
   ],
   imports: [
     BrowserModule,

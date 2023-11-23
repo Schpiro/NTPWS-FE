@@ -34,6 +34,15 @@ export class EventService extends BackendBaseService{
       )
   }
 
+  deleteEvent(id: number): void {
+    console.log("attempt to delete")
+    this.http.delete<void>(this.eventsUrl+'/'+id)
+      .subscribe(
+      () => console.log('Delete successful'),
+      error => console.error('Error deleting item:', error)
+    );
+  }
+
   getEventComments(code:number): Observable<Comment[]>{
     const url = `${this.eventsUrl}/comments/${code}`;
     return this.http.get<Comment[]>(url)

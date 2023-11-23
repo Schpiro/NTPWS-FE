@@ -74,9 +74,9 @@ export class MessageFetchComponent implements OnInit, OnChanges {
   notification(){
     //ne radi za chrome? potrebno fixat
     let audio = new Audio();
-    audio.src = "../../../../assets/notification.mp3";
+    /*audio.src = "../../../../assets/notification.mp3";
     audio.load();
-    audio.play();
+    audio.play();*/
   }
 
   getNameOfRecipient(): string{

@@ -58,7 +58,7 @@
   <div *ngIf="!messages" class="main-content-area card">
     <h1 class="ms-4">Events</h1>
     <div class="card-body h-75">
-      <app-event [filterDate]="filterDate"></app-event>
+      <app-event [filterDate]="filterDate" (webSocketMessage)="sendMessage($event)"></app-event>
     </div>
   </div>
 

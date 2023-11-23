@@ -5,6 +5,7 @@
         <div class="event-item">
           <div (click)="selectedEvent!=event?selectedEvent=event:selectedEvent=undefined">
             <h2>{{event.title}}</h2>
+            <button *ngIf="admin" (click)="deleteEvent(event)">delete</button>
             <div>
               <span class="event-date-location"><i class="bi bi-geo-alt-fill"></i> {{event.location}}</span>
               <span class="event-date-location"><i
