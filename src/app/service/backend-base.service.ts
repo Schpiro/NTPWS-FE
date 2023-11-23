@@ -10,6 +10,7 @@ export class BackendBaseService {
   websocketURL = `wss://${this.ipAddress}:${this.backendPort}/socket/test`;
   userUrl = `${this.baseURL}/users`;
   rootUrl = `${this.baseURL}/authentication`;
+  memeUrl = `${this.baseURL}/meme`
   
   constructor(){}
 
